@@ -40,8 +40,7 @@ jobs:
 
       - name: Deploy Backend to Kubernetes
         run: |
-          kubectl apply -f backend-service.yaml
-          kubectl apply -f backend-deployment.yaml
+          kubectl apply -f backend/
 
       - name: Build & Push Frontend Image
         run: |
@@ -50,5 +49,4 @@ jobs:
 
       - name: Deploy Frontend to Kubernetes
         run: |
-          kubectl apply -f frontend-service.yaml
-          kubectl apply -f frontend-deployment.yaml
+          kubectl apply -f frontend/
