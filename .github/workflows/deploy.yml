@@ -25,12 +25,15 @@ jobs:
 
       - name: Configure Docker
         run: |
-          echo "${{ secrets.GCP_SA_KEY }}" | base64 --decode > $HOME/gcloud-service-key.json
+          echo "${{ secrets.GCP_SA_KEY }}" > $HOME/gcloud-service-key.json
           gcloud auth activate-service-account --key-file $HOME/gcloud-service-key.json
           gcloud auth configure-docker asia-south1-docker.pkg.dev
 
-      - name: Build & Push Backend Image
+      - name: Configure Kubernetes
+        run: |
+          gcloud container clusters get-credentials cluster-1 --region asia-south1 --project development-and-testing-451513
 
+      - name: Build & Push Backend Image
         run: |
           docker build -t asia-south1-docker.pkg.dev/development-and-testing-451513/cluster1/backend:latest backend/
           docker push asia-south1-docker.pkg.dev/development-and-testing-451513/cluster1/backend:latest
@@ -49,4 +52,3 @@ jobs:
         run: |
           kubectl apply -f frontend-service.yaml
           kubectl apply -f frontend-deployment.yaml
-
