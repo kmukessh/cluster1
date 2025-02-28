@@ -1,0 +1,58 @@
+name: Deploy to GKE
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Authenticate with Google Cloud
+        uses: google-github-actions/auth@v1
+        with:
+          credentials_json: ${{ secrets.GCP_SA_KEY }}
+
+      - name: Setup Gcloud
+        uses: google-github-actions/setup-gcloud@v1
+        with:
+          project_id: development-and-testing-451513
+
+      - name: Configure Docker
+        run: |
+          echo "${{ secrets.GCP_SA_KEY }}" | base64 --decode > $HOME/gcloud-service-key.json
+          gcloud auth activate-service-account --key-file $HOME/gcloud-service-key.json
+          gcloud auth configure-docker asia-south1-docker.pkg.dev
+
+      - name: Configure Kubernetes
+        run: |
+          gcloud container clusters get-credentials cluster-1 --region asia-south1-c --project development-and-testing-451513
+
+      - name: Docker Login
+        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+
+      - name: Build & Push Backend Image
+
+        run: |
+          docker build -t asia-south1-docker.pkg.dev/development-and-testing-451513/cluster1/backend:latest backend/
+          docker push asia-south1-docker.pkg.dev/development-and-testing-451513/cluster1/backend:latest
+
+      - name: Deploy Backend to Kubernetes
+        run: |
+          kubectl apply -f backend-service.yaml
+          kubectl apply -f backend-deployment.yaml
+
+      - name: Build & Push Frontend Image
+        run: |
+          docker build -t asia-south1-docker.pkg.dev/development-and-testing-451513/cluster1/frontend:latest frontend/
+          docker push asia-south1-docker.pkg.dev/development-and-testing-451513/cluster1/frontend:latest
+
+      - name: Deploy Frontend to Kubernetes
+        run: |
+          kubectl apply -f frontend-service.yaml
+          kubectl apply -f frontend-deployment.yaml
