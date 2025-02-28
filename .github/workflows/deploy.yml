@@ -29,13 +29,6 @@ jobs:
           gcloud auth activate-service-account --key-file $HOME/gcloud-service-key.json
           gcloud auth configure-docker asia-south1-docker.pkg.dev
 
-      - name: Configure Kubernetes
-        run: |
-          gcloud container clusters get-credentials cluster-1 --region asia-south1-c --project development-and-testing-451513
-
-      - name: Docker Login
-        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-
       - name: Build & Push Backend Image
 
         run: |
@@ -56,4 +49,4 @@ jobs:
         run: |
           kubectl apply -f frontend-service.yaml
           kubectl apply -f frontend-deployment.yaml
-          
+
