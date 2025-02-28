@@ -29,9 +29,10 @@ jobs:
           gcloud auth activate-service-account --key-file $HOME/gcloud-service-key.json
           gcloud auth configure-docker asia-south1-c-docker.pkg.dev
 
-      - name: Configure Kubernetes
-        run: |
-          gcloud container clusters get-credentials cluster-1 --zone asia-south1-c --project development-and-testing-451513
+          - name: Configure Kubernetes
+          run: |
+            gcloud container clusters get-credentials cluster-1 --region asia-south1-c --project development-and-testing-451513
+        
 
 
       - name: Build & Push Backend Image
