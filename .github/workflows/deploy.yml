@@ -35,3 +35,7 @@ jobs:
       - name: Deploy Backend to Kubernetes
         run: |
           kubectl apply -f backend/
+
+      - name: Deploy Frontend to Kubernetes
+        run: |
+          kubectl apply -f frontend/
