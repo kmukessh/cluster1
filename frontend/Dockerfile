@@ -5,7 +5,7 @@ FROM nginx:latest
 WORKDIR /usr/share/nginx/html
 
 # Copy everything from frontend/ to the Nginx HTML folder
-COPY frontend/ .
+COPY . /usr/share/nginx/html
 
 # Expose the default HTTP port
 EXPOSE 80
