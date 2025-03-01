@@ -1,16 +1,31 @@
-const backendURL = window.location.hostname.includes("localhost")
-    ? "http://35.244.18.70:3000/api/data" // Local development
-    : "http://34.47.199.70:3000/api/data";   // Inside Kubernetes
+// script.js
+function addTask() {
+    const taskInput = document.getElementById('taskInput');
+    const taskText = taskInput.value.trim();
 
-async function fetchData() {
-    try {
-        const response = await fetch(backendURL);
-        if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+    if (taskText === '') return; // Prevent adding empty tasks
 
-        const data = await response.json();
-        document.getElementById("message").innerText = `Backend says: ${data.message || 'No message'}`;
-    } catch (error) {
-        console.error("Fetch error:", error);
-        document.getElementById("message").innerText = "Error fetching backend data.";
-    }
+    const li = document.createElement('li');
+    li.innerHTML = `
+        <span onclick="toggleComplete(this)">${taskText}</span>
+        <button class="delete-btn" onclick="deleteTask(this)">Delete</button>
+    `;
+
+    document.getElementById('taskList').appendChild(li);
+    taskInput.value = ''; // Clear input field
 }
+
+function toggleComplete(element) {
+    element.parentElement.classList.toggle('completed');
+}
+
+function deleteTask(button) {
+    button.parentElement.remove();
+}
+
+// Allow adding tasks with Enter key
+document.getElementById('taskInput').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        addTask();
+    }
+});
