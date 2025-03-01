@@ -1,18 +1,20 @@
-# Use Node.js base image
+# Use Node.js as base image
 FROM node:18
 
 # Set working directory
 WORKDIR /app
 
-# Copy package.json and install dependencies
-COPY frontend/.json/package.json frontend/.json/package-lock.json ./
+# Copy package.json and package-lock.json
+COPY .json/package.json .json/package-lock.json ./
+
+# Install dependencies
 RUN npm install
 
-# Copy frontend files
+# Copy frontend source files
 COPY . .
 
-# Expose the port
+# Expose the port Express will run on
 EXPOSE 3000
 
-# Run the Node.js server
+# Start the server
 CMD ["node", "server.js"]
