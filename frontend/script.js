@@ -1,6 +1,6 @@
 const backendURL = window.location.hostname.includes("localhost")
-    ? "http://localhost:3000/api/data" // Local development
-    : "http://backend:3000/api/data";   // Inside Kubernetes
+    ? "http://35.244.18.70:3000/api/data" // Local development
+    : "http://34.47.199.70:3000/api/data";   // Inside Kubernetes
 
 async function fetchData() {
     try {

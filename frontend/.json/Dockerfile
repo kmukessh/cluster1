@@ -9,7 +9,7 @@ COPY .json/package.json .json/package-lock.json ./
 RUN npm install
 
 # Copy frontend files
-COPY frontend/public ./public
+COPY . .
 
 # Expose port & start Express server
 EXPOSE 3000
