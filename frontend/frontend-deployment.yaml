@@ -13,7 +13,7 @@ spec:
         app: frontend
     spec:
       containers:
-      - name: frontend
-        image: asia-south1-docker.pkg.dev/development-and-testing-451513/cluster1/frontend:latest
-        ports:
-        - containerPort: 80
+        - name: frontend
+          image: asia-south1-docker.pkg.dev/development-and-testing-451513/cluster1/frontend:latest
+          ports:
+            - containerPort: 3000
