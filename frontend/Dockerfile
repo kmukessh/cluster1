@@ -1,13 +1,13 @@
-# Use official Nginx image
+# Use official Nginx as a base image
 FROM nginx:latest
 
-# Set working directory
+# Set working directory to Nginx default HTML folder
 WORKDIR /usr/share/nginx/html
 
-# Copy frontend files into Nginx's default directory
-COPY . .
+# Copy everything from frontend/ to the Nginx HTML folder
+COPY frontend/ .
 
-# Expose port 80
+# Expose the default HTTP port
 EXPOSE 80
 
 # Start Nginx
