@@ -2,7 +2,7 @@
 FROM nginx:latest
 
 # Copy the website files to the default Nginx directory
-COPY frontend/index.html
+COPY . /usr/share/nginx/html
 
 # Expose port 80
 EXPOSE 80
