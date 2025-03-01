@@ -16,4 +16,4 @@ spec:
         - name: frontend
           image: asia-south1-docker.pkg.dev/development-and-testing-451513/cluster1/frontend:latest
           ports:
-            - containerPort: 3000
+            - containerPort: 80
