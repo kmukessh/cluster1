@@ -1,13 +1,19 @@
-# Use official Nginx as a base image
-FROM nginx:latest
+# Use Node.js as the base image
+FROM node:18
 
-# Set working directory to Nginx default HTML folder
-WORKDIR /usr/share/nginx/html
+# Set working directory
+WORKDIR /app
 
-# Copy everything from frontend/ to the Nginx HTML folder
+# Copy package.json and package-lock.json
+COPY .json/package.json .json/package-lock.json . 
+
+# Install dependencies
+RUN npm install
+
+# Copy frontend files to the container
 COPY . /usr/share/nginx/html
 
-# Expose the default HTTP port
+# Expose the port for Nginx
 EXPOSE 80
 
 # Start Nginx
