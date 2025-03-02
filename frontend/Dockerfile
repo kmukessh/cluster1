@@ -1,20 +1,17 @@
-# Use Node.js as the base image
-FROM node:18
+# Use Nginx as the base image
+FROM nginx:latest
 
-# Set working directory
-WORKDIR /app
+# Set the working directory
+WORKDIR /usr/share/nginx/html
 
-# Copy package.json and package-lock.json
-COPY .json/package.json .json/package-lock.json . 
+# Remove default index.html
+RUN rm -f /usr/share/nginx/html/index.html
 
-# Install dependencies
-RUN npm install
-
-# Copy frontend files to the container
+# Copy the frontend files into the container (for initial setup)
 COPY . /usr/share/nginx/html
 
-# Expose the port for Nginx
+# Expose port 80 for Nginx
 EXPOSE 80
 
-# Start Nginx
+# Keep the container running
 CMD ["nginx", "-g", "daemon off;"]
