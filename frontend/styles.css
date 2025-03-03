@@ -59,3 +59,9 @@ li {
     text-decoration: line-through;
     opacity: 0.7;
 }
+body {
+    background-image: url('C:\Users\kmuke\cluster\frontend\images');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}

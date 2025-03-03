@@ -1,17 +1,17 @@
 # Use Nginx as the base image
 FROM nginx:latest
 
-# Set the working directory
+# Set the working directory inside Nginx
 WORKDIR /usr/share/nginx/html
 
-# Remove default index.html
+# Remove the default index.html file to avoid conflicts
 RUN rm -f /usr/share/nginx/html/index.html
 
-# Copy the frontend files into the container (for initial setup)
-COPY . /usr/share/nginx/html
+# Copy only the frontend files (HTML, CSS, JS, images)
+COPY ./index.html ./styles.css ./script.js ./images/ ./
 
-# Expose port 80 for Nginx
+# Expose port 80 for HTTP traffic
 EXPOSE 80
 
-# Keep the container running
+# Keep the Nginx server running
 CMD ["nginx", "-g", "daemon off;"]
