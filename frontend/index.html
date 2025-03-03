@@ -10,29 +10,33 @@
 <body>
     <header>
         <h1>Gaming Hub</h1>
-        <input type="text" id="search-bar" placeholder="Search games...">
-        <button id="search-button">🔍</button>
-        <button id="login-button" class="login-btn">Sign In</button>
+        <div class="nav-right">
+            <input type="text" id="search-bar" placeholder="Search games...">
+            <button id="search-button">🔍</button>
+            <button id="login-button" class="login-btn">Sign In</button>
+        </div>
     </header>
     
     <section id="hero">
         <h2>Stay Updated with the Latest Gaming News</h2>
-        <div id="news-container"></div>
+        <div id="news-container" class="card-container"></div>
     </section>
     
     <section>
         <h3>Upcoming Game Releases</h3>
-        <div id="upcoming-games"></div>
+        <div id="upcoming-games" class="card-container"></div>
     </section>
     
     <section>
         <h3>Popular Free-to-Play Games</h3>
-        <div id="free-games"></div>
+        <div id="free-games" class="card-container"></div>
     </section>
     
     <footer>
-        <p>Contact: gaminghub@example.com</p>
-        <p>Follow us on <a href="#">Twitter</a> | <a href="#">YouTube</a></p>
+        <div class="footer-content">
+            <p>Contact: gaminghub@example.com</p>
+            <p>Follow us on <a href="#">Twitter</a> | <a href="#">YouTube</a></p>
+        </div>
     </footer>
 </body>
 </html>
