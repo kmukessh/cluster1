@@ -60,7 +60,7 @@ li {
     opacity: 0.7;
 }
 body {
-    background-image: url('C:\Users\kmuke\cluster\frontend\images');
+    background-image: url('/images/bg.jpg'); /* Make sure this matches the filename */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
