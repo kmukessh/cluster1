@@ -3,44 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ultimate Gaming Hub</title>
+    <title>Gaming Hub</title>
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
 </head>
 <body>
-
-    <!-- Navigation Bar -->
     <header>
         <h1>Gaming Hub</h1>
-        <nav>
-            <input type="text" id="search" placeholder="Search games...">
-            <button id="searchBtn">🔍</button>
-            <button class="login-btn">Sign In</button>
-        </nav>
+        <input type="text" id="search-bar" placeholder="Search games...">
+        <button id="search-button">🔍</button>
+        <button id="login-button" class="login-btn">Sign In</button>
     </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
+    
+    <section id="hero">
         <h2>Stay Updated with the Latest Gaming News</h2>
+        <div id="news-container"></div>
     </section>
-
-    <!-- Upcoming Game Releases -->
+    
     <section>
-        <h2>Upcoming Game Releases</h2>
-        <div class="games-list" id="gameContainer"></div>
+        <h3>Upcoming Game Releases</h3>
+        <div id="upcoming-games"></div>
     </section>
-
-    <!-- Mobile Games -->
+    
     <section>
-        <h2>Popular Mobile Games</h2>
-        <div class="games-list" id="mobileGameContainer"></div>
+        <h3>Popular Free-to-Play Games</h3>
+        <div id="free-games"></div>
     </section>
-
-    <!-- Footer -->
+    
     <footer>
         <p>Contact: gaminghub@example.com</p>
         <p>Follow us on <a href="#">Twitter</a> | <a href="#">YouTube</a></p>
     </footer>
-
 </body>
 </html>
