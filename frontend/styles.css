@@ -6,6 +6,7 @@ body {
     padding: 0;
 }
 
+/* Navigation Bar */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -20,11 +21,24 @@ body {
     color: #e94560;
 }
 
+.search-container {
+    display: flex;
+}
+
 #search {
     padding: 8px;
     width: 200px;
     border: none;
-    border-radius: 5px;
+    border-radius: 5px 0 0 5px;
+}
+
+.search-btn {
+    padding: 8px;
+    background: #e94560;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
 }
 
 .login-btn {
@@ -35,12 +49,36 @@ body {
     cursor: pointer;
 }
 
-.hero {
+/* Game Release Slider */
+.slider {
     text-align: center;
-    padding: 50px;
-    background: url('bg.jpg') no-repeat center center/cover;
+    padding: 20px;
+    background: #16213e;
 }
 
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+}
+
+.slide {
+    display: inline-block;
+    width: 250px;
+    margin: 10px;
+    background: #0f3460;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.slide img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+/* News Section */
 .news-section {
     padding: 20px;
     background: #16213e;

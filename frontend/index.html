@@ -10,20 +10,27 @@
 
     <nav class="navbar">
         <div class="logo">Gaming Hub</div>
-        <input type="text" id="search" placeholder="Search games...">
+        <div class="search-container">
+            <input type="text" id="search" placeholder="Search games...">
+            <button class="search-btn">🔍</button>
+        </div>
         <button class="login-btn">Login</button>
     </nav>
 
-    <header class="hero">
-        <h1>Welcome to the Ultimate Gaming Hub</h1>
-        <p>Stay updated with the latest gaming news, releases, and tournaments.</p>
-    </header>
+    <section class="slider">
+        <h2>New Game Releases</h2>
+        <div class="carousel">
+            <div class="slide" id="game-slider">
+                <!-- Dynamic game release data will be inserted here -->
+            </div>
+        </div>
+    </section>
 
     <main>
         <section id="news" class="news-section">
             <h2>Latest Gaming News</h2>
             <div id="news-container">
-                <!-- News will be dynamically added here -->
+                <!-- Dynamic news updates will appear here -->
             </div>
         </section>
     </main>
