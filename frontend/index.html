@@ -7,30 +7,29 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <nav class="navbar">
-        <div class="logo">Gaming Hub</div>
-        <div class="search-container">
-            <input type="text" id="search" placeholder="Search games...">
-            <button class="search-btn">🔍</button>
-        </div>
-        <button class="login-btn">Login</button>
-    </nav>
-
-    <section class="slider">
-        <h2>New Game Releases</h2>
-        <div class="carousel">
-            <div class="slide" id="game-slider">
-                <!-- Dynamic game release data will be inserted here -->
+    <header>
+        <nav>
+            <div class="logo">Gaming Hub</div>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search games...">
+                <button id="searchBtn">🔍</button>
             </div>
-        </div>
-    </section>
+            <button class="login-btn">Login</button>
+        </nav>
+    </header>
 
     <main>
-        <section id="news" class="news-section">
+        <section class="slider">
+            <h2>Upcoming Game Releases</h2>
+            <div class="slider-container" id="gameSlider">
+                <!-- Dynamic game releases will be added here -->
+            </div>
+        </section>
+
+        <section class="news">
             <h2>Latest Gaming News</h2>
-            <div id="news-container">
-                <!-- Dynamic news updates will appear here -->
+            <div class="news-container" id="newsContainer">
+                <!-- Dynamic news articles will be added here -->
             </div>
         </section>
     </main>
