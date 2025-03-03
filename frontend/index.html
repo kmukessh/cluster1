@@ -5,52 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ultimate Gaming Hub</title>
     <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
+
+    <!-- Navigation Bar -->
     <header>
+        <h1>Gaming Hub</h1>
         <nav>
-            <div class="logo">Gaming Hub</div>
-            <div class="search-bar">
-                <input type="text" id="searchInput" placeholder="Search games...">
-                <button id="searchBtn">🔍</button>
-            </div>
+            <input type="text" id="search" placeholder="Search games...">
+            <button id="searchBtn">🔍</button>
             <button class="login-btn">Sign In</button>
         </nav>
     </header>
 
-    <main>
-        <section class="slider">
-            <h2>Upcoming Game Releases</h2>
-            <div class="slider-container" id="gameSlider">
-                <!-- Games will be loaded dynamically -->
-            </div>
-        </section>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h2>Stay Updated with the Latest Gaming News</h2>
+    </section>
 
-        <section class="news">
-            <h2>Latest Gaming News</h2>
-            <div class="news-container" id="newsContainer">
-                <!-- Gaming news loads dynamically -->
-            </div>
-        </section>
+    <!-- Upcoming Game Releases -->
+    <section>
+        <h2>Upcoming Game Releases</h2>
+        <div class="games-list" id="gameContainer"></div>
+    </section>
 
-        <section class="mobile-news">
-            <h2>Mobile Gaming News</h2>
-            <div class="news-container" id="mobileNewsContainer">
-                <!-- Mobile gaming news loads dynamically -->
-            </div>
-        </section>
+    <!-- Mobile Games -->
+    <section>
+        <h2>Popular Mobile Games</h2>
+        <div class="games-list" id="mobileGameContainer"></div>
+    </section>
 
-        <section class="contact">
-            <h2>Contact Us</h2>
-            <form id="contactForm">
-                <input type="text" id="name" placeholder="Your Name" required>
-                <input type="email" id="email" placeholder="Your Email" required>
-                <textarea id="message" placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-        </section>
-    </main>
+    <!-- Footer -->
+    <footer>
+        <p>Contact: gaminghub@example.com</p>
+        <p>Follow us on <a href="#">Twitter</a> | <a href="#">YouTube</a></p>
+    </footer>
 
-    <script src="script.js"></script>
 </body>
 </html>

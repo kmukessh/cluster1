@@ -1,71 +1,48 @@
 document.addEventListener("DOMContentLoaded", () => {
-    fetchGamingNews();
-    fetchMobileNews();
-    fetchUpcomingGames();
-});
+    const gameContainer = document.getElementById("gameContainer");
+    const mobileGameContainer = document.getElementById("mobileGameContainer");
+    const searchInput = document.getElementById("search");
+    const searchBtn = document.getElementById("searchBtn");
 
-// Fetch Latest Gaming News
-function fetchGamingNews() {
-    const apiKey = "pub_7287433019515bf142d3cade407732a0c465c";
-    const url = `https://newsdata.io/api/1/news?apikey=${apiKey}&q=gaming&language=en`;
-
-    fetch(url)
+    // Fetch upcoming PC games
+    fetch("https://www.freetogame.com/api/games?platform=pc")
         .then(response => response.json())
         .then(data => {
-            const newsContainer = document.getElementById("newsContainer");
-            newsContainer.innerHTML = "";
-            
-            data.results.slice(0, 5).forEach(news => {
-                const newsCard = `
-                    <div class="news-card">
-                        <img src="${news.image_url || 'https://via.placeholder.com/300'}" alt="News Image">
-                        <h3>${news.title}</h3>
-                        <a href="${news.link}" target="_blank">Read More</a>
-                    </div>
-                `;
-                newsContainer.innerHTML += newsCard;
-            });
-        })
-        .catch(error => console.error("Error fetching news:", error));
-}
+            displayGames(data.slice(0, 5), gameContainer);
+        });
 
-// Fetch Mobile Gaming News
-function fetchMobileNews() {
-    const apiKey = "pub_7287433019515bf142d3cade407732a0c465c";
-    const url = `https://newsdata.io/api/1/news?apikey=${apiKey}&q=mobile%20gaming&language=en`;
-
-    fetch(url)
+    // Fetch mobile games
+    fetch("https://www.freetogame.com/api/games?platform=browser")
         .then(response => response.json())
         .then(data => {
-            const mobileNewsContainer = document.getElementById("mobileNewsContainer");
-            mobileNewsContainer.innerHTML = "";
-            
-            data.results.slice(0, 5).forEach(news => {
-                const newsCard = `
-                    <div class="news-card">
-                        <img src="${news.image_url || 'https://via.placeholder.com/300'}" alt="News Image">
-                        <h3>${news.title}</h3>
-                        <a href="${news.link}" target="_blank">Read More</a>
-                    </div>
-                `;
-                mobileNewsContainer.innerHTML += newsCard;
-            });
-        })
-        .catch(error => console.error("Error fetching news:", error));
-}
+            displayGames(data.slice(0, 5), mobileGameContainer);
+        });
 
-// Fetch Upcoming Games
-function fetchUpcomingGames() {
-    const games = [
-        { title: "Elden Ring: Shadow of the Erdtree", image: "https://upload.wikimedia.org/eldenring.jpg" },
-        { title: "GTA VI", image: "https://upload.wikimedia.org/gtavi.jpg" },
-        { title: "Starfield DLC", image: "https://upload.wikimedia.org/starfield.jpg" }
-    ];
-
-    const slider = document.getElementById("gameSlider");
-    slider.innerHTML = "";
-
-    games.forEach(game => {
-        slider.innerHTML += `<img src="${game.image}" alt="${game.title}" title="${game.title}">`;
+    // Search functionality
+    searchBtn.addEventListener("click", () => {
+        const searchTerm = searchInput.value.toLowerCase();
+        if (searchTerm) {
+            fetch(`https://www.freetogame.com/api/games`)
+                .then(response => response.json())
+                .then(data => {
+                    const filteredGames = data.filter(game => game.title.toLowerCase().includes(searchTerm));
+                    gameContainer.innerHTML = "";
+                    displayGames(filteredGames, gameContainer);
+                });
+        }
     });
-}
+
+    function displayGames(games, container) {
+        container.innerHTML = "";
+        games.forEach(game => {
+            const gameCard = document.createElement("div");
+            gameCard.classList.add("game-card");
+            gameCard.innerHTML = `
+                <img src="${game.thumbnail}" alt="${game.title}">
+                <h3>${game.title}</h3>
+                <p>${game.short_description}</p>
+            `;
+            container.appendChild(gameCard);
+        });
+    }
+});

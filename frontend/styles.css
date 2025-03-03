@@ -1,141 +1,76 @@
-/* Global Style */
+/* Global Styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #121212;
-    color: #fff;
+    background: #f9f9f9;
+    color: #333;
+    text-align: center;
     margin: 0;
-    padding: 0;
 }
 
-/* Navbar */
-nav {
+/* Header */
+header {
+    background: #0078ff;
+    color: white;
+    padding: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
-    background: #1a1a2e;
-    box-shadow: 0 4px 10px rgba(0, 255, 255, 0.3);
 }
 
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: cyan;
+nav input {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
 }
 
-.search-bar input {
-    padding: 10px;
-    width: 220px;
-    border: 2px solid cyan;
-    border-radius: 8px;
-    background: black;
-    color: white;
-}
-
-.search-bar button {
-    padding: 10px;
-    background: cyan;
+nav button {
+    padding: 8px;
+    background: white;
+    color: #0078ff;
     border: none;
     cursor: pointer;
-    border-radius: 8px;
-    font-size: 14px;
-    transition: 0.3s;
 }
 
-.search-bar button:hover {
-    background: #00ffff;
-}
-
-/* Login Button */
 .login-btn {
     background: red;
     color: white;
+    padding: 8px;
     border: none;
-    padding: 10px 20px;
     cursor: pointer;
-    font-size: 14px;
-    border-radius: 8px;
-    transition: 0.3s;
 }
 
-.login-btn:hover {
-    background: #ff4444;
+/* Hero Section */
+.hero {
+    background: #e0f7fa;
+    padding: 40px;
+    font-size: 20px;
 }
 
-/* Game Release Slider */
-.slider {
-    text-align: center;
-    margin: 20px 0;
-}
-
-.slider-container {
+/* Game Cards */
+.games-list {
     display: flex;
-    overflow-x: auto;
-    white-space: nowrap;
-    padding: 10px;
-}
-
-.slider-container img {
-    width: 180px;
-    height: 250px;
-    margin: 5px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px cyan;
-}
-
-/* News Section */
-.news, .mobile-news {
-    padding: 20px;
-}
-
-.news-container {
-    display: flex;
+    justify-content: center;
+    gap: 15px;
     flex-wrap: wrap;
-    gap: 20px;
 }
 
-.news-card {
-    background: #222;
+.game-card {
+    width: 200px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
     padding: 10px;
-    border-radius: 8px;
-    width: 300px;
-    box-shadow: 0 0 10px cyan;
+    background: white;
 }
 
-.news-card img {
+.game-card img {
     width: 100%;
-    height: 150px;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
-.news-card h3 {
-    font-size: 16px;
-}
-
-/* Contact Section */
-.contact {
-    text-align: center;
-    padding: 30px;
-    background: #1a1a2e;
-}
-
-.contact input, .contact textarea {
-    width: 80%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 2px solid cyan;
-    background: black;
+/* Footer */
+footer {
+    background: #0078ff;
     color: white;
-}
-
-.contact button {
-    padding: 10px 20px;
-    background: cyan;
-    border: none;
-    cursor: pointer;
-    border-radius: 8px;
-}
-
-.contact button:hover {
-    background: #00ffff;
+    padding: 15px;
+    margin-top: 20px;
 }
