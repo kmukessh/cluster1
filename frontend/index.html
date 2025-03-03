@@ -14,7 +14,7 @@
                 <input type="text" id="searchInput" placeholder="Search games...">
                 <button id="searchBtn">🔍</button>
             </div>
-            <button class="login-btn">Login</button>
+            <button class="login-btn">Sign In</button>
         </nav>
     </header>
 
@@ -22,15 +22,32 @@
         <section class="slider">
             <h2>Upcoming Game Releases</h2>
             <div class="slider-container" id="gameSlider">
-                <!-- Dynamic game releases will be added here -->
+                <!-- Games will be loaded dynamically -->
             </div>
         </section>
 
         <section class="news">
             <h2>Latest Gaming News</h2>
             <div class="news-container" id="newsContainer">
-                <!-- Dynamic news articles will be added here -->
+                <!-- Gaming news loads dynamically -->
             </div>
+        </section>
+
+        <section class="mobile-news">
+            <h2>Mobile Gaming News</h2>
+            <div class="news-container" id="mobileNewsContainer">
+                <!-- Mobile gaming news loads dynamically -->
+            </div>
+        </section>
+
+        <section class="contact">
+            <h2>Contact Us</h2>
+            <form id="contactForm">
+                <input type="text" id="name" placeholder="Your Name" required>
+                <input type="email" id="email" placeholder="Your Email" required>
+                <textarea id="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
         </section>
     </main>
 

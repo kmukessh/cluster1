@@ -1,4 +1,4 @@
-/* Cyberpunk Theme */
+/* Global Style */
 body {
     font-family: Arial, sans-serif;
     background-color: #121212;
@@ -24,26 +24,42 @@ nav {
 }
 
 .search-bar input {
-    padding: 8px;
-    width: 200px;
-    border: none;
-    border-radius: 5px;
+    padding: 10px;
+    width: 220px;
+    border: 2px solid cyan;
+    border-radius: 8px;
+    background: black;
+    color: white;
 }
 
 .search-bar button {
-    padding: 8px 12px;
+    padding: 10px;
     background: cyan;
     border: none;
     cursor: pointer;
-    margin-left: 5px;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: 0.3s;
 }
 
+.search-bar button:hover {
+    background: #00ffff;
+}
+
+/* Login Button */
 .login-btn {
     background: red;
     color: white;
     border: none;
-    padding: 10px 15px;
+    padding: 10px 20px;
     cursor: pointer;
+    font-size: 14px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.login-btn:hover {
+    background: #ff4444;
 }
 
 /* Game Release Slider */
@@ -60,14 +76,15 @@ nav {
 }
 
 .slider-container img {
-    width: 150px;
-    height: 200px;
+    width: 180px;
+    height: 250px;
     margin: 5px;
     border-radius: 10px;
+    box-shadow: 0 0 15px cyan;
 }
 
 /* News Section */
-.news {
+.news, .mobile-news {
     padding: 20px;
 }
 
@@ -95,7 +112,30 @@ nav {
     font-size: 16px;
 }
 
-.news-card a {
-    color: cyan;
-    text-decoration: none;
+/* Contact Section */
+.contact {
+    text-align: center;
+    padding: 30px;
+    background: #1a1a2e;
+}
+
+.contact input, .contact textarea {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid cyan;
+    background: black;
+    color: white;
+}
+
+.contact button {
+    padding: 10px 20px;
+    background: cyan;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.contact button:hover {
+    background: #00ffff;
 }
