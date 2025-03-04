@@ -3,40 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gaming Hub</title>
+    <title>Bali Travel Blog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
 </head>
 <body>
-    <header>
-        <h1>Gaming Hub</h1>
-        <div class="nav-right">
-            <input type="text" id="search-bar" placeholder="Search games...">
-            <button id="search-button">🔍</button>
-            <button id="login-button" class="login-btn">Sign In</button>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Bali Bliss</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#posts">Posts</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
-    </header>
-    
-    <section id="hero">
-        <h2>Stay Updated with the Latest Gaming News</h2>
-        <div id="news-container" class="card-container"></div>
-    </section>
-    
-    <section>
-        <h3>Upcoming Game Releases</h3>
-        <div id="upcoming-games" class="card-container"></div>
-    </section>
-    
-    <section>
-        <h3>Popular Free-to-Play Games</h3>
-        <div id="free-games" class="card-container"></div>
-    </section>
-    
-    <footer>
-        <div class="footer-content">
-            <p>Contact: gaminghub@example.com</p>
-            <p>Follow us on <a href="#">Twitter</a> | <a href="#">YouTube</a></p>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Discover the Magic of Bali</h1>
+            <p>Explore the Island of the Gods through our travel experiences</p>
         </div>
+    </section>
+
+    <!-- Blog Posts -->
+    <section class="posts" id="posts">
+        <h2>Latest Posts</h2>
+        <div class="posts-grid">
+            <article class="post-card">
+                <div class="post-image" style="background-image: url('https://source.unsplash.com/random/800x600/?bali-temple')"></div>
+                <div class="post-content">
+                    <h3>Sacred Temples of Bali</h3>
+                    <p>Discover the spiritual heart of Bali through its ancient temples and religious ceremonies.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <div class="post-image" style="background-image: url('https://source.unsplash.com/random/800x600/?bali-beach')"></div>
+                <div class="post-content">
+                    <h3>Top Beaches to Visit</h3>
+                    <p>Explore Bali's most stunning beaches, from popular hotspots to hidden gems.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <div class="post-image" style="background-image: url('https://source.unsplash.com/random/800x600/?bali-food')"></div>
+                <div class="post-content">
+                    <h3>Balinese Cuisine Guide</h3>
+                    <p>A culinary journey through Bali's unique flavors and traditional dishes.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-pinterest"></i></a>
+        </div>
+        <p>&copy; 2023 Bali Bliss. All rights reserved.</p>
     </footer>
+
+    <script src="app.js"></script>
 </body>
 </html>
