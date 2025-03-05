@@ -49,7 +49,7 @@ nav {
 .hero {
     height: 100vh;
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                url('') center/cover no-repeat;
+                url('images/bg1.jpg') center/contain no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -58,6 +58,7 @@ nav {
     padding: 0 1rem;
     position: relative;
 }
+
 
 .hero-content h1 {
     font-size: 3rem;
